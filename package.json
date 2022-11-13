@@ -1,0 +1,22 @@
+{
+  "name": "cli-helper",
+  "version": "2.1.0",
+  "description": "GUI assistive application to launch CLI commands.",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./preinstall.ps1",
+    "serve:react": "npm --prefix ./react/ run start",
+    "serve:electron": "concurrently -k \"cross-env BROWSER=none npm --prefix ./react/ run start\" \"npm run start:electron\"",
+    "build:react": "npm --prefix ./react/ run build",
+    "build:electron": "npm --prefix ./electron/ run build",
+    "build:app": "npm run build:react && npm run build:electron",
+    "start:electron": "wait-on tcp:3000 && npm --prefix ./electron/ run start"
+  },
+  "author": "Dylan Barnard",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^7.5.0",
+    "cross-env": "^7.0.3",
+    "wait-on": "^6.0.1"
+  }
+}
