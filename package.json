@@ -1,22 +1,47 @@
 {
-  "name": "cli-helper",
+  "name": "electron-backend",
   "version": "2.1.0",
-  "description": "GUI assistive application to launch CLI commands.",
-  "main": "index.js",
+  "description": "Electron Backend for our Cli-Helper tool.",
+  "main": "main.js",
   "scripts": {
-    "postinstall": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./preinstall.ps1",
-    "serve:react": "npm --prefix ./react/ run start",
-    "serve:electron": "concurrently -k \"cross-env BROWSER=none npm --prefix ./react/ run start\" \"npm run start:electron\"",
-    "build:react": "npm --prefix ./react/ run build",
-    "build:electron": "npm --prefix ./electron/ run build",
-    "build:app": "npm run build:react && npm run build:electron",
-    "start:electron": "wait-on tcp:3000 && npm --prefix ./electron/ run start"
+    "build": "electron-builder -c.extraMetadata.main=./main.js",
+    "start": "electron ."
+  },
+  "build": {
+    "extends": null,
+    "appId": "com.dbarnard.clihelper",
+    "productName": "CLI-Helper",
+    "directories": {
+      "buildResources": "resources",
+      "output": "release"
+    },
+    "files": [
+      "build/**/*",
+      "node_modules/**/*",
+      "main.js",
+      "preload.js",
+      "package.json"
+    ],
+    "target": "NSIS",
+    "nsis": {
+      "allowToChangeInstallationDirectory": true,
+      "oneClick": false
+    },
+    "win": {
+      "icon": "./build/icon.ico"
+    }
   },
   "author": "Dylan Barnard",
   "license": "ISC",
+  "dependencies": {
+    "cli-helper": "file:..",
+    "electron-backend": "file:",
+    "electron-is-dev": "^2.0.0",
+    "electron-store": "^8.1.0",
+    "v8-compile-cache": "^2.3.0"
+  },
   "devDependencies": {
-    "concurrently": "^7.5.0",
-    "cross-env": "^7.0.3",
-    "wait-on": "^6.0.1"
+    "electron": "^21.2.3",
+    "electron-builder": "^23.6.0"
   }
 }
