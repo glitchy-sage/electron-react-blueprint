@@ -8,7 +8,7 @@ Template for creating electron-react applications. Setup in 2 parts, react front
 
 ## Instructions
 
-### Learn the root-level commands below.   &darr;
+### &darr; Learn the root-level commands below &darr;
 
 ### Root-Level Commands
 
