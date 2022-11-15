@@ -1,36 +1,12 @@
 {
   "name": "electron-backend",
-  "version": "2.1.0",
-  "description": "Electron Backend for our Cli-Helper tool.",
-  "main": "main.js",
+  "version": "2.2.0",
+  "description": "Electron backend development package.",
+  "main": "./src/main.js",
   "scripts": {
-    "build": "electron-builder -c.extraMetadata.main=./main.js",
     "start": "electron ."
   },
-  "build": {
-    "appId": "com.dbarnard.clihelper",
-    "productName": "CLI-Helper",
-    "directories": {
-      "buildResources": "resources",
-      "output": "release"
-    },
-    "files": [
-      "build/**/*",
-      "node_modules/**/*",
-      "main.js",
-      "preload.js",
-      "package.json"
-    ],
-    "target": "NSIS",
-    "nsis": {
-      "allowToChangeInstallationDirectory": true,
-      "oneClick": false
-    },
-    "win": {
-      "icon": "./build/icon.ico"
-    }
-  },
-  "author": "Dylan Barnard",
+  "author": "Glitchy Sage",
   "license": "ISC",
   "dependencies": {
     "electron-is-dev": "^2.0.0",
@@ -38,7 +14,6 @@
     "v8-compile-cache": "^2.3.0"
   },
   "devDependencies": {
-    "electron": "^21.2.3",
-    "electron-builder": "^23.6.0"
+    "electron": "^21.2.3"
   }
 }

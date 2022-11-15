@@ -1,0 +1,22 @@
+{
+    "appId": "com.name.app",
+    "productName": "electron-react-app",
+    "directories": {
+        "buildResources": "resources",
+        "output": "../release"
+    },
+    "files": [
+        "public/**/*",
+        "src/**/*",
+        "node_modules/**/*",
+        "package.json"
+    ],
+    "target": "NSIS",
+    "nsis": {
+        "allowToChangeInstallationDirectory": true,
+        "oneClick": false
+    },
+    "win": {
+        "icon": "./public/favicon.ico"
+    }
+}

@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { resolve } = require('path');
 
 module.exports = {
@@ -6,16 +7,22 @@ module.exports = {
     entry: resolve(__dirname, 'src', 'index.jsx'),
     output: {
         path: resolve(__dirname, 'build'),
-        filename: 'bundle.js'
+        filename: 'index.js',
+        publicPath: './'
     },
     resolve: {
-        extensions: ['.js', '.jsx']
+        extensions: ['.js', '.jsx', '.json']
     },
     plugins: [
         new HtmlWebpackPlugin({
             template:
-                './public/index.html',
+                './src/index.html',
         }),
+        new CopyWebpackPlugin({
+            patterns: [
+                { from: 'public' }
+            ]
+        })
     ],
     module: {
         rules: [
@@ -26,7 +33,7 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['@babel/preset-react', ['@babel/preset-env', { "targets": "defaults" }]],
+                        presets: [["@babel/preset-react", { "runtime": "automatic" }], ['@babel/preset-env', { "targets": "defaults" }]],
                         plugins: ['@babel/plugin-transform-runtime'],
                     },
                 },
@@ -44,7 +51,6 @@ module.exports = {
     devServer: {
         host: 'localhost',
         port: 3000,
-        historyApiFallback: true,
-        open: true
+        historyApiFallback: true
     }
 }

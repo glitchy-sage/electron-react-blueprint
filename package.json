@@ -1,23 +1,20 @@
 {
   "name": "electron-react",
-  "version": "1.0.0",
-  "description": "Template for creating Electron React applications.",
+  "version": "2.2.0",
+  "description": "Template for creating electron-react applications.",
   "main": "index.js",
   "scripts": {
+    "start": "concurrently -k \"npm --prefix ./react/ run start:headless\" \"npm run serve:electron\"",
+    "build": "npm run build:electron",
+    "prebuild": "npm run build:react",
     "postinstall": "./scripts/postinstall.ps1 || powershell .\\scripts\\postinstall.ps1",
     "update": "npm update && ./scripts/postupdate.ps1 || powershell .\\scripts\\postupdate.ps1",
     "serve:react": "npm --prefix ./react/ run start",
-    "serve:electron": "concurrently -k \"cross-env BROWSER=none npm --prefix ./react/ run start\" \"npm run start:electron\"",
+    "serve:electron": "wait-on tcp:3000 && npm --prefix ./electron/ run start",
     "build:react": "npm --prefix ./react/ run build",
-    "build:electron": "npm --prefix ./electron/ run build",
-    "build:app": "npm run build:react && npm run build:electron",
-    "start:electron": "wait-on tcp:3000 && npm --prefix ./electron/ run start"
+    "build:electron1": "electron-builder -c.electronVersion=21.2.3 -c.extraMetadata.main=./electron/src/main.js",
+    "build:electron": "electron-builder --project ./electron --config ./electron-builder.json"
   },
   "author": "Glitchy Sage",
-  "license": "ISC",
-  "devDependencies": {
-    "concurrently": "^7.5.0",
-    "cross-env": "^7.0.3",
-    "wait-on": "^6.0.1"
-  }
+  "license": "ISC"
 }
