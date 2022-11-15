@@ -71,7 +71,7 @@ PS C:\electron-react> npm run build:react
 
 <br/>
 
-- npm run build:electron - Runs build command for electron. Note: This command utilizes the config file found in './electron-react/electron/electron-builder.json. In order to edit these configurations I recommend reading up on [electron-builder](https://www.electron.build/ "electron-builder docs")
+- npm run build:electron - Runs build command for electron. Note: This command utilizes the config file found in './electron-react/electron/electron-builder.json. In order to edit these configurations I recommend reading up on [electron-builder](https://www.electron.build/ "electron-builder docs").
 
 ```
 PS C:\electron-react> npm run build:electron 
