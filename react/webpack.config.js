@@ -1,28 +1,40 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
 const { resolve } = require('path');
 
-module.exports = {
+let config = {
     mode: 'development',
+    devtool: "source-map",
     entry: resolve(__dirname, 'src', 'index.jsx'),
     output: {
         path: resolve(__dirname, 'build'),
-        filename: 'index.js',
-        publicPath: './'
+        filename: 'static/index.js'
     },
     resolve: {
-        extensions: ['.js', '.jsx', '.json']
+        extensions: ['.js', '.jsx', '.json', '.css', '.scss'],
+        modules: [resolve(__dirname), "node_modules"]
     },
     plugins: [
         new HtmlWebpackPlugin({
             template:
-                './src/index.html',
+                './public/index.html'
         }),
         new CopyWebpackPlugin({
             patterns: [
-                { from: 'public' }
+                {
+                    from: './public/static',
+                    to: './static'
+                }
             ]
-        })
+        }),
+        new CleanWebpackPlugin(),
+        new MiniCssExtractPlugin({
+            filename: 'static/index.css',
+        }),
     ],
     module: {
         rules: [
@@ -39,13 +51,16 @@ module.exports = {
                 },
             },
             {
-                test: /\.scss$/,
+                test: /\.(svg|gif|png|eot|woff2|woff|ttf)$/,
                 use: [
-                    'style-loader',
-                    'css-loader',
-                    'sass-loader'
-                ]
-            }
+                    'url-loader',
+                ],
+            },
+        ],
+    },
+    optimization: {
+        minimizer: [
+            new CssMinimizerPlugin(),
         ],
     },
     devServer: {
@@ -53,4 +68,29 @@ module.exports = {
         port: 3000,
         historyApiFallback: true
     }
-}
+};
+
+let cssConfig = {
+    test: /\.(sa|sc|c)ss$/,
+    use: [
+        'css-loader',
+        'sass-loader'
+    ]
+};
+
+module.exports = (env, argv) => {
+
+    if (argv.mode === 'production') {
+        config.output.publicPath = './';
+        cssConfig.use.unshift(MiniCssExtractPlugin.loader);
+        config.module.rules.push(cssConfig);
+
+        return config;
+    }
+
+    config.output.publicPath = 'auto';
+    cssConfig.use.unshift('style-loader');
+    config.module.rules.push(cssConfig);
+
+    return config;
+};
