@@ -30,8 +30,6 @@ PS C:\electron-react> npm run update
 
 3. Serve Development Enviroment Commands
 
-<br/>
-
 - npm start - Runs headless react server, then launches electron afterwards to communicate with the localhost:3000.
 
 ```
@@ -56,8 +54,6 @@ PS C:\electron-react> npm run serve:electron
 
 <br/>
 3. Application Build Commands
-
-<br/>
 
 - npm run build - Runs build command for react, once completed it then runs electron build.
 
@@ -95,8 +91,6 @@ PS C:\electron-react\react> npm install
 
 2. Start Commands
 
-<br/>
-
 - npm start - Runs react server on localhost:3000, then opens browser for viewing.
 
 ```
@@ -112,8 +106,6 @@ PS C:\electron-react\react> npm run start:headless
 ```
 
 3. Build Commands
-
-<br/>
 
 - npm run build - Build's react files into static files and places into './build' directory.
 
