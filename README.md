@@ -12,18 +12,9 @@ Template for creating electron-react applications. Setup in 2 parts, react front
 
 1. Run npm install in root. This will also call the postinstall script which will update the lower packages.
 
-```
-PS C:\electron-react> npm install 
-```
-
 <br/>
 
 2. Learn the root-level command below
-
-```
-PS C:\electron-react\react> npm start 
-PS C:\electron-react\react> npm build 
-```
 
 <br/>
 
