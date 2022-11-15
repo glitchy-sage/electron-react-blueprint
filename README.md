@@ -8,8 +8,6 @@ Template for creating electron-react applications. Setup in 2 parts, react front
 
 ## Instructions
 
-<br/>
-
 1. Run npm install in root. This will also call the postinstall script which will update the lower packages.
 
 <br/>
@@ -21,8 +19,6 @@ Template for creating electron-react applications. Setup in 2 parts, react front
 3. Don't be afraid to edit it and mess around! This is not tried and tested but surely we can get there.
 
 ## Root-Level Commands
-
-<br/>
 
 1. npm install - Runs install in root file and electron/react sub-directories.
 
@@ -97,8 +93,6 @@ PS C:\electron-react> npm run build:electron
 
 ## React-Level Commands
 
-<br/>
-
 1. npm install - Runs install in react file.
 
 ```
@@ -146,8 +140,6 @@ PS C:\electron-react\react> npm run postbuild
 <br/>
 
 ## Electron-Level Commands
-
-<br/>
 
 1. npm install - Runs install in electron file.
 
