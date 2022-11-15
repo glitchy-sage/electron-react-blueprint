@@ -1,6 +1,6 @@
 <h1 align="center">Electron-React-Blueprint</h1>
 <h2 align="center">
-    <img src="./react/public/favicon.ico" title="Electron Logo" alt="Electron Logo" style="width: 25%; height: auto;"/>
+    <img src="./react/public/static/favicon.ico" title="Electron Logo" alt="Electron Logo" style="width: 25%; height: auto;"/>
 </h2>
 
 <h2 align="center">Introduction</h2>
