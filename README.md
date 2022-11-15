@@ -1,21 +1,21 @@
-<center><h1>Electron-React-Blueprint</h1></center>
-<center>
+<h1 align="center">Electron-React-Blueprint</h1>
+<h2 align="center">
     <img src="./react/public/favicon.ico" title="Electron Logo" alt="Electron Logo" style="width: 25%; height: auto;"/>
-</center>
+</h2>
 
-<center><h2>Introduction</h2></center>
+<h2 align="center">Introduction</h2>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template for creating electron-react applications. Setup in 2 parts, react frontend and electron backend. Run NPM Install on the initial directory.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Note: This was built using webpack manually, there may still be some tweaks to configuration required.
 
-<center><h2>Instructions</h2></center>
+<h2 align="center">Instructions</h2>
 
-<center><h3>&darr; Learn the root-level commands below &darr;</h3></center>
+<h3 align="center">&darr; Learn the root-level commands below &darr;</h3>
 
 <br/>
 
-<center><h3>Root-Level Commands</h3></center>
+<h3 align="center">Root-Level Commands</h3>
 
 1. npm install - Runs install in root file and electron/react sub-directories. Note: This command will also run npm run postinstall automatically afterwards. This script is responsible for installing lower dependencies.
 
@@ -84,7 +84,7 @@ PS C:\electron-react> npm run build:electron
 
 <br/>
 
-<center><h3>React-Level Commands</h3></center>
+<h3 align="center">React-Level Commands</h3>
 
 1. npm install - Runs install in react file.
 
@@ -130,7 +130,7 @@ PS C:\electron-react\react> npm run postbuild
 
 <br/>
 
-<center><h3>Electron-Level Commands</h3></center>
+<h3 align="center">Electron-Level Commands</h3>
 
 1. npm install - Runs install in electron file.
 
