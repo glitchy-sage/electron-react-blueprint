@@ -1,7 +1,7 @@
 {
-  "name": "electron-react",
+  "name": "electron-react-blueprint",
   "version": "2.2.0",
-  "description": "Template for creating electron-react applications.",
+  "description": "Blueprint for creating electron-react applications.",
   "main": "index.js",
   "scripts": {
     "start": "concurrently -k \"npm --prefix ./react/ run start:headless\" \"npm run serve:electron\"",

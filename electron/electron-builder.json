@@ -1,5 +1,5 @@
 {
-    "appId": "com.name.app",
+    "appId": "electron.react.app",
     "productName": "electron-react-app",
     "directories": {
         "buildResources": "resources",
