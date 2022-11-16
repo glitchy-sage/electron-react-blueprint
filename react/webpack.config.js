@@ -51,10 +51,20 @@ let config = {
                 },
             },
             {
-                test: /\.(svg|gif|png|eot|woff2|woff|ttf)$/,
-                use: [
-                    'url-loader',
-                ],
+                test: /\.(svg|gif|png|ico|jpg)$/,
+                type: 'asset/resource',
+                generator: {
+                    filename: './static/img/[name]-[hash][ext]',
+                },
+
+            },
+            {
+                test: /\.(eot|woff(2)?|ttf)$/,
+                type: 'asset/resource',
+                generator: {
+                    filename: './static/font/[name]-[hash][ext]',
+                },
+
             },
         ],
     },
