@@ -1,6 +1,8 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import App from './app/App';
+import App from './App';
+
+// Import for Sass, I use Sass myself but you are welcome to delete this & use only css or whatever style components you wish
 import './sass/main.scss';
 
 // webpack
