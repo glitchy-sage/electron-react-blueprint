@@ -1,0 +1,31 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+
+
+}
+
+html {
+    font-size: 62.5%;
+
+
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+    background-color: $color-background;
+    color: $color-white;
+}
+
+::selection {
+
+    background-color: $color-selection;
+    color: $color-black;
+
+
+}
