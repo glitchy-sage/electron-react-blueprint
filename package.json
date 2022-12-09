@@ -16,5 +16,10 @@
     "build:electron": "electron-builder --project ./electron --config ./electron-builder.json"
   },
   "author": "Glitchy Sage",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "electron-builder": "^23.6.0",
+    "wait-on": "^6.0.1"
+  }
 }
